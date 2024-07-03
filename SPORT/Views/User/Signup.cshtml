@@ -1,0 +1,36 @@
+﻿@model RegisterDTO
+
+<body>
+    <h4 style="text-align:center; margin-bottom:0px;">Please SignUp </h4>
+
+    <form method="Post" asp-controller="User" asp-action="SignUp">
+        <div class="form-group">
+            <label class="sr-only" for="username"></label>
+            <input type="text" name="username" class="form-control" id="username" placeholder="UserName">
+            <span asp-validation-for="@Model.UserName" class="text-light"></span>
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="email"></label>
+            <input type="text" name="email" class="form-control" id="email" placeholder="Email">
+            <span asp-validation-for="@Model.Email" class="text-light"></span>
+
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="password"></label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+            <span asp-validation-for="@Model.Password" class="text-light"></span>
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="phonenumber"></label>
+            <input type="text" name="phonenumber" class="form-control" id="phonenumber" placeholder="PhoneNumber">
+            <span asp-validation-for="@Model.PhoneNumber" class="text-light"></span>
+
+
+            <input type="hidden" asp-for="Roles" value="user">
+      
+
+
+        <button type="submit" class="btn btn-success mt-2" style="width:100%">Sign up</button>
+    </form>
+
+</body>

@@ -1,0 +1,23 @@
+﻿@model LoginDTO
+
+<body>
+    <h4 style="text-align:center; margin-bottom:0px;">Please SignIn </h4>
+
+
+<form method="Post" asp-controller="User" asp-action="Authenticate">
+    <div class="form-group">
+        @*         <label class="" for="username">username:</label> *@
+        <input type="text" name="username" class="form-control" id="username" placeholder="UserName">
+        <span asp-validation-for="@Model.UserName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="" for="password"></label>
+        <input type="password" name="Password" class="form-control" id="Password" placeholder="Password">
+        <span asp-validation-for="@Model.Password" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-outline-success mt-2" style="width:100%">Sign in</button>
+</form>
+
+</body>
